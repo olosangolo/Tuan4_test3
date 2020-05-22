@@ -11,12 +11,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    var recycler : RecyclerView? = null
-    var adapter : MovieAdapter? = null
+    var recycler: RecyclerView? = null
+    var adapter: MovieAdapter? = null
     private lateinit var viewPager: ViewPager
     private lateinit var bottomNavigationView: BottomNavigationView
-    var isGrid : Boolean = false
-    var currentFragment : Fragment = NowPlaying()
+    var isGrid: Boolean = false
+    var currentFragment: Fragment = NowPlaying()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,9 +25,9 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
         viewPager = findViewById(R.id.viewPager)
 
-        val fragmentAdapter  =ViewPagerAdapter(supportFragmentManager)
-        viewPager.adapter= fragmentAdapter
-        viewPager?.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
+        val fragmentAdapter = ViewPagerAdapter(supportFragmentManager)
+        viewPager.adapter = fragmentAdapter
+        viewPager?.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) {
             }
 
@@ -45,23 +45,23 @@ class MainActivity : AppCompatActivity() {
 
         })
 
-        bottomNavigationView =findViewById(R.id.navBottom)
+        bottomNavigationView = findViewById(R.id.navBottom)
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
-            when (menuItem.itemId){
-                R.id.item_nowPlaying ->{
-                    viewPager.currentItem =0
+            when (menuItem.itemId) {
+                R.id.item_nowPlaying -> {
+                    viewPager.currentItem = 0
                     replaceFragment(NowPlaying())
                     currentFragment = NowPlaying()
                     return@setOnNavigationItemSelectedListener true
                 }
-                R.id.item_topRating ->{
-                    viewPager.currentItem =1
+                R.id.item_topRating -> {
+                    viewPager.currentItem = 1
                     replaceFragment(TopRating())
                     currentFragment = TopRating()
                     return@setOnNavigationItemSelectedListener true
                 }
-                else ->{
-                    viewPager.currentItem =2
+                else -> {
+                    viewPager.currentItem = 2
                     replaceFragment(MyFavourite())
                     currentFragment = MyFavourite()
                     return@setOnNavigationItemSelectedListener true
@@ -70,9 +70,10 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
-    private fun replaceFragment(fragment: Fragment){
-        val fragmentTransaction =supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragmentContainer,fragment)
+
+    private fun replaceFragment(fragment: Fragment) {
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragmentContainer, fragment)
         fragmentTransaction.commit()
     }
 

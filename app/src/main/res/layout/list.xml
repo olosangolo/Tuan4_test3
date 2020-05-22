@@ -35,17 +35,7 @@
             app:layout_constraintLeft_toRightOf="@+id/imageView"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/favoriteButton"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@drawable/healthy"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
 
-            app:layout_constraintVertical_bias="0.909"
-            >
-        </androidx.appcompat.widget.AppCompatImageButton>
         <TextView
             android:id="@+id/movie_content"
             android:layout_width="0dp"

@@ -45,7 +45,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
                         <ImageButton
-                            android:id="@+id/fav_btn_list"
+                            android:id="@+id/now_btn_list"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:layout_constraintTop_toTopOf="parent"
@@ -55,13 +55,13 @@
                             app:srcCompat="@drawable/ic_list"
                             tools:ignore="VectorDrawableCompat" />
                         <ImageButton
-                            android:id="@+id/fav_btn_grid"
+                            android:id="@+id/now_btn_grid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintLeft_toRightOf="@id/fav_btn_grid"
+                            app:layout_constraintLeft_toRightOf="@id/now_btn_list"
                             app:srcCompat="@drawable/ic_grid"
                             tools:ignore="VectorDrawableCompat" />
                     </androidx.constraintlayout.widget.ConstraintLayout>

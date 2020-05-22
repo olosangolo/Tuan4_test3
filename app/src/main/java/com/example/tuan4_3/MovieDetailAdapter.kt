@@ -7,10 +7,8 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
-import androidx.appcompat.widget.AppCompatImageButton
 import com.bumptech.glide.Glide
 import com.google.android.material.appbar.CollapsingToolbarLayout
-import com.khtn.androidcamp.DataCenter
 
 class MovieDetailAdapter : AppCompatActivity() {
     lateinit var imgMovie: ImageView
@@ -18,13 +16,10 @@ class MovieDetailAdapter : AppCompatActivity() {
     var description: TextView? = null
     var title: TextView? = null
     lateinit var rating: RatingBar
-    lateinit var btnFav: AppCompatImageButton
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_detail_adapter)
-        btnFav = findViewById(R.id.favButton)
         val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -52,13 +47,5 @@ class MovieDetailAdapter : AppCompatActivity() {
         rating = findViewById(R.id.movieDetail_ratingBar)
 
         rating.rating = movie.vote_average.toFloat()
-
-        btnFav.setOnClickListener(object : View.OnClickListener{
-            override fun onClick(v: View?) {
-                if(!DataCenter.listFavoriteMovie.contains(movie)){
-                    DataCenter.listFavoriteMovie.add(movie)
-                }
-            }})
-
     }
 }

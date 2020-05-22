@@ -17,7 +17,7 @@ class ViewPagerAdapter (fragmentManager: FragmentManager):FragmentPagerAdapter(f
                  TopRating()
              }
              else->{
-                 return MyFavourite()
+                 return Favorite()
              }
         }
     }
